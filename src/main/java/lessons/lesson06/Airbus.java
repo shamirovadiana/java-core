@@ -1,5 +1,7 @@
 package lessons.lesson06;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,6 +13,9 @@ public class Airbus {
     private final Map<Integer, Seat> seats;
     public Airbus(){
         seats = new HashMap<>();
+    }
+    public void payForTicket(int number){
+        seats.get(number).setPaymentStatus(PaymentStatus.PAID.toString());
     }
     public void getSeatInfo(int number){
         seats.get(number).getSeatInfo();
@@ -26,6 +31,9 @@ public class Airbus {
         if(isAvailable(number)) {
             seats.get(number).setPerson(fio, phoneNumber, email);
             seats.get(number).setReservationStatus(ReservationStatus.RESERVED.toString());
+            LocalDate today = LocalDate.now();
+            LocalTime time = LocalTime.now();
+            seats.get(number).setBooking(today, time);
         } else {
             System.out.println("Место уже забронировано!");
         }
