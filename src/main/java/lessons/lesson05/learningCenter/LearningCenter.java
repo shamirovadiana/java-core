@@ -7,15 +7,22 @@ public class LearningCenter {
     private final Map<String, Student> students;
     private final Map<String, Teacher> teachers;
     private final Map<String, Course> courses;
+    private final Map<String, Score> scores;
+
     public LearningCenter(){
         students = new HashMap<>();
         teachers = new HashMap<>();
         courses = new HashMap<>();
+        scores = new HashMap<>();
     }
     public void addNewCourse(String id, String subject, String[] schedule, String teacherFio, String teacherId){
         Course course = new Course(id, subject, teacherFio, teacherId);
         course.setSchedule(schedule);
         courses.put(id, course);
+    }
+    public void setScore(String studentId, Score score){
+        scores.put(studentId, score);
+        System.out.println(String.format("%s : %s", students.get(studentId).getFio(), score.toString()));
     }
     public void removeCourse(String id){
         courses.remove(id);

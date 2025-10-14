@@ -15,6 +15,6 @@ public class Score {
     public static Score FIVE = new Score("5", "Отлично");
 
     public String toString(){
-        return "Оценка = " + score + "(" + description + ")";
+        return score + "(" + description + ")";
     }
 }

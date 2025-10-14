@@ -9,20 +9,33 @@ public class Course {
     private Teacher teacher;
     private String[] schedule;
     private final Map<String, Student> students;
+    private final Attendance attendance;
+
     public Course(){
         students = new HashMap<>();
+        attendance = new Attendance();
+
     }
     public Course(String id, String subject, String teacherFio, String teacherId){
         this.id = id;
         this.subject = subject;
         teacher = new Teacher(teacherFio, teacherId);
         students = new HashMap<>();
+        attendance = new Attendance();
     }
+
     public void getStudentsList(){
         for(String id : students.keySet()){
             students.get(id).getStudentInfo();
         }
     }
+    public void studentIsAbsent(String id){
+        attendance.isAbsent(id);
+    }
+    public void studentIsPresent(String id){
+        attendance.isPresent(id);
+    }
+
     public void getTeacherInfo(){
         System.out.println(teacher.getFio());
     }

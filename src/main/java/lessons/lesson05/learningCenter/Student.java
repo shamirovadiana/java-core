@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class Student {
     private String id;
     private String fio;
+
     private final ArrayList<Course> studentCourses;
     public Student(String fio, String id){
         this.fio = fio;
@@ -16,6 +17,8 @@ public class Student {
     public void getStudentInfo(){
         System.out.println(fio);
     }
+
+
     public String getFio() {
         return fio;
     }
