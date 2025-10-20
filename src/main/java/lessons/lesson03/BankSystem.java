@@ -18,7 +18,7 @@ public class BankSystem {
     public void getAccountInfo(String fio){
         String accountNumber = accountMap.get(fio).getAccountNumber();
         long balance = accountMap.get(fio).getBalance();
-        System.out.println(String.format("ФИО: %s Лицевой счёт: %s Баланс: %s", fio, accountNumber, balance));
+        System.out.println(String.format("ФО: %s Лицевой счёт: %s Баланс: %s", fio, accountNumber, balance));
     }
 
     public void deposit(final String fio, final long amount){

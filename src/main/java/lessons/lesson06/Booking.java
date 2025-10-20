@@ -1,9 +1,13 @@
 package lessons.lesson06;
 
+import lombok.Getter;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+
 public class Booking {
+
     private LocalDate date;
     private LocalTime time;
     public Booking(LocalDate date, LocalTime time){
